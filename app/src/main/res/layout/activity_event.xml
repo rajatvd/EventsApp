@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:id="@+id/eventName"
         android:textColor="#000000"
-        android:textSize="25dp"
+        android:textSize="30dp"
         android:padding="5dp"
         android:gravity="center"/>
 
@@ -31,7 +31,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:weightSum="2">
+        android:weightSum="2"
+        android:orientation="horizontal">
 
         <TextView
             android:text="Event Location"
@@ -41,6 +42,7 @@
             android:textSize="18dp"
             android:layout_weight="1"
             android:padding="5dp"
+            android:gravity="center"
             android:id="@+id/eventLocation" />
 
         <TextView
@@ -50,6 +52,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:gravity="center"
             android:id="@+id/eventTime"
             android:padding="5dp"/>
 
@@ -62,15 +65,61 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="5dp"
+        android:gravity="center"
         android:id="@+id/eventPrizeMoney"/>
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Coordinator name"
-        android:textSize="18dp"
+        android:text="Call a Coordinator"
+        android:textSize="25dp"
+        android:gravity="center"
         android:textColor="#000000"
+        android:paddingTop="20dp"
+        android:id="@+id/eventCallACoord"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
         android:padding="5dp"
-        android:id="@+id/eventCoordName"/>
+        android:weightSum="10">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="18dp"
+            android:gravity="center"
+            android:textColor="#000000"
+            android:padding="5dp"
+            android:text="Coordinator name"
+            android:id="@+id/eventCoordName"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_weight="3"
+                android:layout_height="match_parent"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:textColor="#000000"
+                android:text="Phone Number"
+                android:id="@+id/eventCoordNumber"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_weight="7"
+                android:layout_height="50dp"
+
+                android:text="Call"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>

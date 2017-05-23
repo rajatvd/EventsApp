@@ -35,7 +35,10 @@ public class EventActivity extends AppCompatActivity {
         tvPrizeMoney.setText("Prize Money: Rs. " + event.prizeMoney);
 
         TextView tvCoordName = (TextView) findViewById(R.id.eventCoordName);
-        tvCoordName.setText("Coordinator: "+event.coordName);
+        tvCoordName.setText(event.coordName);
+
+        TextView tvCoordNumber = (TextView) findViewById(R.id.eventCoordNumber);
+        tvCoordNumber.setText(event.coordNumber);
 
         Log.i("EVENTINFO", event.toString());
 
