@@ -11,12 +11,13 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class EventActivity extends AppCompatActivity {
 
 
     Event event;
-
+    public static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
 
     @Override
 
@@ -64,17 +65,33 @@ public class EventActivity extends AppCompatActivity {
         callIntent.setData(Uri.parse("tel:"+event.coordNumber));
 
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CALL_PHONE},
+                    MY_PERMISSIONS_REQUEST_CALL_PHONE);
             Log.i("PERMISSIONCHECK","NO CALLING PERMISSION");
             return;
         }
         startActivity(callIntent);
+    }
+
+    public void onRequestPermissionsResult(int requestCode,
+                                           String permissions[], int[] grantResults) {
+        switch (requestCode) {
+            case MY_PERMISSIONS_REQUEST_CALL_PHONE: {
+                // If request is cancelled, the result arrays are empty.
+                if (grantResults.length > 0
+                        && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+
+                    callNumber(event.coordNumber);
+
+                }else {
+                    Toast.makeText(this, "No permission to make a call", Toast.LENGTH_SHORT).show();
+
+                }
+                return;
+            }
+
+        }
     }
 
 
