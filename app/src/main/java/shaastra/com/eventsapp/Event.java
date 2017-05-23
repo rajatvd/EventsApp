@@ -3,11 +3,13 @@ package shaastra.com.eventsapp;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.Serializable;
+
 /**
  * Created by Rajat on 22-05-2017.
  */
 
-public class Event {
+public class Event implements Serializable{
 
     String eventName, desc, coordName, coordNumber, time;
     String loc;
