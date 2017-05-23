@@ -1,0 +1,73 @@
+{
+  "eventCategories":[
+    {
+      "eventCategoryName":"Coding Events",
+      "events":[
+        {
+          "eventName":"Hackathon",
+          "description":"Teams battle it out over 24 hours to develop an app or website which solves a prevalent issue in society.",
+          "coordName":"Rahul",
+          "coordNumber":"+919876543210",
+          "time":"Jan 1, 2017, 19:00",
+          "location":"ICSR",
+          "prizeMoney":10000
+        },
+        {
+          "eventName":"Reverse Coding",
+          "description":"Fix the errors and code in reverse",
+          "coordName":"Rahul2",
+          "coordNumber":"+917876543210",
+          "time":"Jan 1, 2017, 13:00",
+          "location":"CRC",
+          "prizeMoney":5000
+        }
+      ]
+    },
+    {
+      "eventCategoryName":"Business Events",
+      "events":[
+        {
+          "eventName":"BizQuiz",
+          "description":"Teams battle it out in a quiz about business.",
+          "coordName":"Tarun",
+          "coordNumber":"+919877543210",
+          "time":"Jan 2, 2017, 13:00",
+          "location":"CRC",
+          "prizeMoney":10000
+        },
+        {
+          "eventName":"Data analytics",
+          "description":"Solve the problem statment given using the dataset.",
+          "coordName":"Tarun2",
+          "coordNumber":"+917876543310",
+          "time":"Jan 1, 2017, 14:00",
+          "location":"CLT",
+          "prizeMoney":8000
+        }
+      ]
+    },
+    {
+      "eventCategoryName":"Involve and Quizzing",
+      "events":[
+        {
+          "eventName":"Shaastra Cube Open",
+          "description":"Who can solve the Rubik's cube and its variants the fastest?",
+          "coordName":"Shiva",
+          "coordNumber":"+916876543210",
+          "time":"Jan 1, 2017, 11:00",
+          "location":"DoMs",
+          "prizeMoney":15000
+        },
+        {
+          "eventName":"Shaastra Main Quiz",
+          "description":"The Biggest quiz in Shaastra",
+          "coordName":"Govind",
+          "coordNumber":"+919976543210",
+          "time":"Jan 1, 2017, 13:00",
+          "location":"CRC",
+          "prizeMoney":20000
+        }
+      ]
+    }
+  ]
+}
