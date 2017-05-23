@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Displays the event categories in a grid
         GridView gridView = (GridView) findViewById(R.id.gridView);
 
         ArrayList<EventCategory> eventCategories = new ArrayList<EventCategory>();
@@ -42,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
                 EventCategoryAdapter evCagAd = (EventCategoryAdapter) parent.getAdapter();
                 EventCategory evCag = evCagAd.getItem(position);
 
+                // Start a new activity and pass the corresponding event category into it as an
+                // extra in the intent
+
                 Intent i = createEvCagIntent(evCag);
 
                 startActivity(i);
@@ -53,6 +57,8 @@ public class MainActivity extends AppCompatActivity {
 
     public Intent createEvCagIntent(EventCategory eventCategory){
         Intent i = new Intent(this,EventCategoryActivity.class);
+
+        // Pass the event category as an extra
         i.putExtra("eventCategory", (Serializable) eventCategory);
         return i;
     }
@@ -67,15 +73,19 @@ public class MainActivity extends AppCompatActivity {
         EventCategory evcag4 = new EventCategory("Robotics events",null);
         evcags.add(evcag4);*/
 
+        // Create some events for demo purposes using the sample events listed in sampleEvents.json
         String samplesString = loadJSONStringFromAsset("sampleEvents.json");
         try {
             JSONObject sampleFile = new JSONObject(samplesString);
+            // Setup the categories
             JSONArray eventCags = sampleFile.getJSONArray("eventCategories");
             for(int i=0;i<eventCags.length();i++){
                 JSONObject evCagJSON = eventCags.getJSONObject(i);
 
                 ArrayList<Event> evs = new ArrayList<Event>();
                 JSONArray evsJSON = evCagJSON.getJSONArray("events");
+
+                // Add all the events under a category
                 for(int j=0;j<evsJSON.length();j++){
                     JSONObject ev = evsJSON.getJSONObject(j);
                     Event event = new Event(ev);
@@ -92,6 +102,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public String loadJSONStringFromAsset(String filename) {
+        // Read a string from a JSON file
         String json = null;
         try {
             InputStream is = this.getAssets().open(filename);

@@ -17,6 +17,8 @@ public class EventCategoryActivity extends AppCompatActivity {
 
     EventCategory eventCategory;
 
+    // Activity to list out the events under a particular event category
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,10 +27,12 @@ public class EventCategoryActivity extends AppCompatActivity {
         TextView title = (TextView) findViewById(R.id.evCagName);
         ListView eventsView = (ListView) findViewById(R.id.evCagList);
 
+        // Get the event category object which this activity should display
         eventCategory = (EventCategory) getIntent().getSerializableExtra("eventCategory");
 
 
-
+        // We don't plan on adding or changing events WHILE the app is running, so making this
+        // array list final isn't a problem
         final ArrayList<Event> eventsList = eventCategory.events;
         String[] eventNames = new String[eventsList.size()];
         for(int i=0;i<eventsList.size();i++){
@@ -43,6 +47,10 @@ public class EventCategoryActivity extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Event ev = eventsList.get(position);
                 Intent i = createEvIntent(ev);
+
+                // Start a new activity and pass the event object corresponding to what was clicked
+                // as an extra in the intent
+
                 startActivity(i);
             }
         });

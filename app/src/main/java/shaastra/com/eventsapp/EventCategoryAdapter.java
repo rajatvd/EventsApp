@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 public class EventCategoryAdapter extends ArrayAdapter<EventCategory> {
 
+    // Custom adapter so that we can display each event category by an image
 
     public EventCategoryAdapter(Context context, ArrayList<EventCategory> eventCategories) {
         super(context, 0, eventCategories);
@@ -28,12 +29,7 @@ public class EventCategoryAdapter extends ArrayAdapter<EventCategory> {
         // Get the data item for this position
         EventCategory eventCategory = getItem(position);
         // Check if an existing view is being reused, otherwise inflate the view
-        int layout = 0;
-        /*if(match.showDetails){
-            layout = R.layout.list_item_match_detailed;
-        }else{
-            layout = R.layout.list_item_match_simple;
-        }*/
+
         if (convertView == null) {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.event_category_item, parent, false);
         }

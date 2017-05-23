@@ -18,7 +18,9 @@ public class EventActivity extends AppCompatActivity {
 
 
     Event event;
-    public static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1;
+
+    public static final int MY_PERMISSIONS_REQUEST_CALL_PHONE = 1; // A unique id for which
+    // permission request was made so that we can identify it in the callback.
 
     @Override
 
@@ -27,6 +29,9 @@ public class EventActivity extends AppCompatActivity {
         setContentView(R.layout.activity_event);
 
         event = (Event) getIntent().getSerializableExtra("event");
+
+        // Setup the values of the UI elements based on the event object which was passed into
+        // this activity through the intent extra
 
         TextView tvName = (TextView) findViewById(R.id.eventName);
         tvName.setText(event.eventName);
@@ -53,6 +58,7 @@ public class EventActivity extends AppCompatActivity {
         btCallCoord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                // Call button
                 callNumber(event.coordNumber);
             }
         });
@@ -61,31 +67,40 @@ public class EventActivity extends AppCompatActivity {
 
     }
 
+
+    // Function to initiate a phone call to a number
     public void callNumber(String number){
         Intent callIntent = new Intent(Intent.ACTION_CALL);
         callIntent.setData(Uri.parse("tel:"+event.coordNumber));
 
+        // Check if call permissions are not there
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+            // Request the permission if not there
             ActivityCompat.requestPermissions(this,
                     new String[]{Manifest.permission.CALL_PHONE},
                     MY_PERMISSIONS_REQUEST_CALL_PHONE);
             Log.i("PERMISSIONCHECK","NO CALLING PERMISSION");
-            return;
+            return; // Don't attempt to call without permission(the request permission is async), so just return.
         }
         startActivity(callIntent);
     }
 
+    // The request permission callback
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
         switch (requestCode) {
+            // Check which permission was requested using the unique id
             case MY_PERMISSIONS_REQUEST_CALL_PHONE: {
                 // If request is cancelled, the result arrays are empty.
                 if (grantResults.length > 0
                         && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
 
+                    // Permission was granted, so call the number.
                     callNumber(event.coordNumber);
 
                 }else {
+
+                    // Permission denied, notify the user that the call can't be made
                     Toast.makeText(this, "No permission to make a call", Toast.LENGTH_SHORT).show();
 
                 }

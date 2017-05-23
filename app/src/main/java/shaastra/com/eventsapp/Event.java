@@ -11,6 +11,8 @@ import java.io.Serializable;
 
 public class Event implements Serializable{
 
+    // Storing almost everything simply as a String for simplicity
+
     String eventName, desc, coordName, coordNumber, time;
     String loc;
     int prizeMoney;

@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 public class EventCategory implements Serializable{
 
+    // A category under which multiple events can be there.
+
     ArrayList<Event> events;
     String name;
 
