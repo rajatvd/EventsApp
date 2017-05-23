@@ -109,13 +109,14 @@
                 android:text="Phone Number"
                 android:id="@+id/eventCoordNumber"/>
 
-            <Button
+            <ImageButton
                 android:layout_width="match_parent"
                 android:gravity="center"
                 android:layout_weight="7"
                 android:layout_height="50dp"
                 android:id="@+id/eventCallButton"
-                android:text="Call"/>
+                android:src="@drawable/icon_call_coord"
+                android:background="#00FFFFFF"/>
 
         </LinearLayout>
 

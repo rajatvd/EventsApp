@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -48,7 +49,7 @@ public class EventActivity extends AppCompatActivity {
         TextView tvCoordNumber = (TextView) findViewById(R.id.eventCoordNumber);
         tvCoordNumber.setText(event.coordNumber);
 
-        Button btCallCoord = (Button) findViewById(R.id.eventCallButton);
+        ImageButton btCallCoord = (ImageButton) findViewById(R.id.eventCallButton);
         btCallCoord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
