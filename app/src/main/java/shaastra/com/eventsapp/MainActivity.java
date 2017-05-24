@@ -92,7 +92,8 @@ public class MainActivity extends AppCompatActivity {
                     evs.add(event);
                 }
 
-                EventCategory evCag = new EventCategory(evCagJSON.getString("eventCategoryName"), evs);
+                EventCategory evCag = new EventCategory(evCagJSON.getString("eventCategoryName"), evs,
+                        evCagJSON.getString("eventCategoryIconName"));
                 evCags.add(evCag);
             }
         } catch (JSONException e) {

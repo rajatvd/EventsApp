@@ -13,10 +13,12 @@ public class EventCategory implements Serializable{
 
     ArrayList<Event> events;
     String name;
+    String iconName;
 
-    public EventCategory(String nname, ArrayList<Event> evs){
+    public EventCategory(String nname, ArrayList<Event> evs, String iconname){
         name = nname;
         events = evs;
+        iconName = iconname;
     }
 
     public String toString(){

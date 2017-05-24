@@ -2,6 +2,7 @@
   "eventCategories":[
     {
       "eventCategoryName":"Coding Events",
+      "eventCategoryIconName":"coding_events",
       "events":[
         {
           "eventName":"Hackathon",
@@ -25,6 +26,7 @@
     },
     {
       "eventCategoryName":"Business Events",
+      "eventCategoryIconName":"business_events",
       "events":[
         {
           "eventName":"BizQuiz",
@@ -48,6 +50,7 @@
     },
     {
       "eventCategoryName":"Involve and Quizzing",
+      "eventCategoryIconName":"involve_and_quizzing",
       "events":[
         {
           "eventName":"Shaastra Cube Open",
