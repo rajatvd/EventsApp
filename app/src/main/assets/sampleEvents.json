@@ -12,7 +12,8 @@
           "time":"Jan 1, 2017, 19:00",
           "location":"ICSR",
           "prizeMoney":10000,
-          "placeId":"dummy"
+          "lat":12.991773,
+          "lng":80.232156
         },
         {
           "eventName":"Reverse Coding",
@@ -22,7 +23,8 @@
           "time":"Jan 1, 2017, 13:00",
           "location":"CRC",
           "prizeMoney":5000,
-          "placeId":"dummy"
+          "lat":12.990055,
+          "lng":80.230344
         }
       ]
     },
@@ -38,7 +40,8 @@
           "time":"Jan 2, 2017, 13:00",
           "location":"CRC",
           "prizeMoney":10000,
-          "placeId":"dummy"
+          "lat":12.990055,
+          "lng":80.230344
         },
         {
           "eventName":"Data analytics",
@@ -48,7 +51,8 @@
           "time":"Jan 1, 2017, 14:00",
           "location":"CLT",
           "prizeMoney":8000,
-          "placeId":"dummy"
+          "lat":12.989524,
+          "lng":80.232
         }
       ]
     },
@@ -64,7 +68,8 @@
           "time":"Jan 1, 2017, 11:00",
           "location":"DoMs",
           "prizeMoney":15000,
-          "placeId":"dummy"
+          "lat":12.991590,
+          "lng":80.234578
         },
         {
           "eventName":"Shaastra Main Quiz",
@@ -72,9 +77,10 @@
           "coordName":"Govind",
           "coordNumber":"+919976543210",
           "time":"Jan 1, 2017, 13:00",
-          "location":"CRC 101 big ttext blah blah lbalhsd hi howiel sdfnsldkfnsldkfnsldnflsdknflksn",
+          "location":"CRC 101",
           "prizeMoney":20000,
-          "placeId":"dummy"
+          "lat":12.990055,
+          "lng":80.230344
         }
       ]
     }

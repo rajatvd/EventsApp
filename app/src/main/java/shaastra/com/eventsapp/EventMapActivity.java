@@ -13,6 +13,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 public class EventMapActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
+    Event event;
+    final static float INITIAL_ZOOM = 17.0f;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +24,9 @@ public class EventMapActivity extends FragmentActivity implements OnMapReadyCall
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        event = (Event) getIntent().getSerializableExtra("event");
+
     }
 
 
@@ -39,8 +44,8 @@ public class EventMapActivity extends FragmentActivity implements OnMapReadyCall
         mMap = googleMap;
 
         // Add a marker in Sydney and move the camera
-        LatLng sydney = new LatLng(-34, 151);
-        mMap.addMarker(new MarkerOptions().position(sydney).title("Marker in Sydney"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(sydney));
+        LatLng eventLoc = new LatLng(event.lat,event.lng);
+        mMap.addMarker(new MarkerOptions().position(eventLoc).title(event.loc));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eventLoc,INITIAL_ZOOM));
     }
 }

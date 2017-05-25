@@ -14,6 +14,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 public class EventActivity extends AppCompatActivity {
 
 
@@ -68,7 +70,7 @@ public class EventActivity extends AppCompatActivity {
         btMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                openMaps(event.placeId);
+                openMaps();
             }
         });
 
@@ -120,8 +122,9 @@ public class EventActivity extends AppCompatActivity {
     }
 
 
-    public void openMaps(String placeId){
+    public void openMaps(){
         Intent i = new Intent(this,EventMapActivity.class);
+        i.putExtra("event",(Serializable)event );
         startActivity(i);
     }
 

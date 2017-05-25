@@ -15,7 +15,7 @@ public class Event implements Serializable{
 
     String eventName, desc, coordName, coordNumber, time;
     String loc;
-    String placeId;
+    double lat, lng;
     int prizeMoney;
 
     public Event(JSONObject obj) {
@@ -27,7 +27,8 @@ public class Event implements Serializable{
             time = obj.getString("time");
             loc = obj.getString("location");
             prizeMoney = obj.getInt("prizeMoney");
-            placeId = obj.getString("placeId");
+            lat = obj.getDouble("lat");
+            lng = obj.getDouble("lng");
 
         } catch (JSONException e) {
             e.printStackTrace();
