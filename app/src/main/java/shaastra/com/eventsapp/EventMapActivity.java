@@ -43,9 +43,11 @@ public class EventMapActivity extends FragmentActivity implements OnMapReadyCall
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
 
-        // Add a marker in Sydney and move the camera
+        // Add a marker on the location of the event which was passed as an extra in the intent
         LatLng eventLoc = new LatLng(event.lat,event.lng);
         mMap.addMarker(new MarkerOptions().position(eventLoc).title(event.loc));
+
+        // Move the camera and zoom it in
         mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(eventLoc,INITIAL_ZOOM));
     }
 }
