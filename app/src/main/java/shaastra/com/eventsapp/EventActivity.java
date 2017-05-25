@@ -63,12 +63,12 @@ public class EventActivity extends AppCompatActivity {
             }
         });
 
+        // Button to open the maps activity
         ImageButton btMap = (ImageButton) findViewById(R.id.eventMapsButton);
         btMap.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Call button
-                callNumber(event.coordNumber);
+                openMaps(event.placeId);
             }
         });
 
@@ -119,5 +119,10 @@ public class EventActivity extends AppCompatActivity {
         }
     }
 
+
+    public void openMaps(String placeId){
+        Intent i = new Intent(this,EventMapActivity.class);
+        startActivity(i);
+    }
 
 }
