@@ -63,6 +63,15 @@ public class EventActivity extends AppCompatActivity {
             }
         });
 
+        ImageButton btMap = (ImageButton) findViewById(R.id.eventMapsButton);
+        btMap.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Call button
+                callNumber(event.coordNumber);
+            }
+        });
+
         Log.i("EVENTINFO", event.toString());
 
     }

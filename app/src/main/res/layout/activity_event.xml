@@ -33,24 +33,39 @@
         android:layout_height="wrap_content"
         android:weightSum="2"
         android:orientation="horizontal">
-
-        <TextView
-            android:text="Event Location"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="#000000"
-            android:textSize="18dp"
             android:layout_weight="1"
-            android:padding="5dp"
-            android:gravity="center"
-            android:id="@+id/eventLocation" />
+            android:weightSum="10">
 
+            <TextView
+                android:text="Event Location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:padding="5dp"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:id="@+id/eventLocation" />
+
+            <ImageButton
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_weight="8"
+                android:layout_height="match_parent"
+                android:id="@+id/eventMapsButton"
+                android:src="@drawable/ic_event_maps"
+                android:background="#00FFFFFF"/>
+
+        </LinearLayout>
         <TextView
             android:text="Event time"
             android:textSize="18dp"
             android:textColor="#000000"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_weight="1"
             android:gravity="center"
             android:id="@+id/eventTime"
